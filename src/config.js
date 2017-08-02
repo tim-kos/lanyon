@@ -8,7 +8,6 @@ const webpack                 = require('webpack')
 const webpackDevMiddleware    = require('webpack-dev-middleware')
 const webpackHotMiddleware    = require('webpack-hot-middleware')
 // const BowerWebpackPlugin      = require('bower-webpack-plugin')
-const SvgStoreWebpackPlugin   = require('webpack-svgstore-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const Visualizer              = require('webpack-visualizer-plugin')
 const yaml                    = require('js-yaml')
@@ -512,14 +511,6 @@ const cfg = {
           _     : 'lodash',
           $     : 'jquery',
           jQuery: 'jquery',
-        }),
-        new SvgStoreWebpackPlugin({
-          svgoOptions: {
-            plugins: [
-             { removeTitle: true },
-            ],
-          },
-          prefix: 'icon-',
         }),
         // Until loaders are updated one can use the LoaderOptionsPlugin to switch loaders into debug mode:
         new webpack.LoaderOptionsPlugin({
